@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: code-server-ingress
+  namespace: code-server
+spec:
+  rules:
+    - host: code.xxx.com
+      http:
+        paths:
+          - backend:
+              serviceName: code-server
+              servicePort: 80
+            path: /

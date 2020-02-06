@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nexue-ingress
+  namespace: kube-ops
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: nexue.xxx.com
+    http:
+      paths:
+      - backend:
+          serviceName: nexus-service
+          servicePort: 8081
